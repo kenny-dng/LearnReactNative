@@ -22,7 +22,7 @@ const HomeScreen: React.FC = () => {
     const subscription = ScreenOrientation.addOrientationChangeListener(handleOrientationChange);
 
     // Initialisation de l'orientation lors du montage du composant
-    ScreenOrientation.getOrientationAsync().then((orientationValue) => 
+    ScreenOrientation.getOrientationAsync().then((orientationValue) =>
       handleOrientationChange({ orientationInfo: { orientation: orientationValue }, orientationLock: 0 })
     );
 
@@ -33,6 +33,7 @@ const HomeScreen: React.FC = () => {
 
   const handlePress = (value: string) => {
     console.log('Button pressed: ', value);
+
     if (value === 'C') {
       setExpression(prev => prev.length > 1 ? prev.slice(0, -1) : '0');
     } else if (value === 'AC') {
